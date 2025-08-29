@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px 20px 0 0;
+    margin: 40px 50px 0 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    text-align: center;
+    background-color: rgb(111 88 50);
+}
+
+.footer ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}

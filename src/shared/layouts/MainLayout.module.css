@@ -1,0 +1,12 @@
+.layout {
+    display: block;
+    text-align: center;
+    background-image: url('theme.jpg');
+    background-size: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.main {
+    padding: 0 13px 0 13px;
+    text-align: left;
+}
