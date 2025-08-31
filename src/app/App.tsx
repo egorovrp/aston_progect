@@ -1,6 +1,7 @@
 import { type FC } from "react";
 import { MainLayout } from "../shared/layouts/MainLayout";
 import { PostList } from "../widgets/PostList/PostList";
+import { ThemeProvider } from "../shared/lib/theme/ThemeProvider";
 
 export const App: FC = () => {
   const posts = [
@@ -13,8 +14,10 @@ export const App: FC = () => {
   ];
 
   return (
-    <MainLayout>
-      <PostList posts={posts} />
-    </MainLayout>
+    <ThemeProvider defaultTheme="light">
+      <MainLayout>
+        <PostList posts={posts} />
+      </MainLayout>
+    </ThemeProvider>
   );
 };

@@ -1,6 +1,6 @@
-import { type FC } from 'react';
-import styles from './PostList.module.css';
-import { PostCard } from '../../entities/post/ui/PostCard';
+import { type FC, Fragment } from "react";
+import styles from "./PostList.module.css";
+import { PostCard } from "../../entities/post/ui/PostCard";
 
 interface Post {
   id: number;
@@ -14,8 +14,10 @@ interface PostListProps {
 
 export const PostList: FC<PostListProps> = ({ posts }) => (
   <div className={styles.list}>
-    {posts.map(post => (
-      <PostCard key={post.id} title={post.title} content={post.content} />
+    {posts.map((post) => (
+      <Fragment key={post.id}>
+        <PostCard title={post.title} content={post.content} />
+      </Fragment>
     ))}
   </div>
 );
