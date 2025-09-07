@@ -1,69 +1,47 @@
-# React + TypeScript + Vite
+Домашнее задание №1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Инициализирован проект с помощью Vite + TypeScript.
 
-Currently, two official plugins are available:
+2. Созданы:
+   - App.tsx → src/app/
+   - MainLayout.tsx → src/shared/layouts/
+   - Header, Footer → src/widgets/LayoutHeader/, LayoutFooter/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3. Создан список постов-заглушек:
+   - PostList → src/widgets/PostList/
+   - PostCard → src/entities/post/ui/PostCard.tsx
 
-## Expanding the ESLint configuration
+4. Передача данных между компонентами через props (список постов).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+5. Созданы Css Modules для стилизации компонентов.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+6. Создан файл .gitattributes для устранения проблемы переноса строк.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+7. Отредактирован файл README.md
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Домашнее задание №2 
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Реализовано переключение темы в проекте через контекст.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Добавлено модальное окно с информацией о проекте, которое открывается по кнопке "О проекте".
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Домашнее задание №3
+
+Реализовано отображение модального окна с использованием compound components, добавлена фильтрация постов по длине заголовка, свертывание комментариев и оптимизация через HOC и хуки.
+
+1. Compound Components:
+   - Modal с подкомпонентами (Header, Body, Footer) → src/shared/ui/Modal/
+
+2. HOC withLoading:
+   - HOC → src/shared/lib/hoc/
+   - Применяется к PostList
+
+3. Свертывание/разворачивание комментариев:
+  - CommentList.tsx → src/widgets/CommentList/ui/
+  - Использованы useState, useCallback
+
+4. Добавлена фильтрация по длине заголовка:
+  - PostLengthFilter → src/features/PostLengthFilter/ui/
+  - filterByLength.ts → src/features/PostLengthFilter/lib/
+
+5. Использованы useMemo, useCallback в PostList

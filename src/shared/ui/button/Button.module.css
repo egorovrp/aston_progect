@@ -1,0 +1,19 @@
+.btn {
+    height: 50px;
+    width: 120px;
+    border: 2px solid #9b7d45;
+    border-radius: 25px;
+    background-color: #162327;
+    color: #99683a;
+    font-size: 17px;
+}
+
+.btn:hover {
+    background: #6f5832;
+    color: #cabb9a;
+}
+
+.dark {
+    background-color: #162327;
+    color: white;
+}

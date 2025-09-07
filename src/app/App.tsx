@@ -1,20 +1,30 @@
-import { type FC } from "react";
+import { type FC, useState, useEffect } from "react";
 import { MainLayout } from "../shared/layouts/MainLayout";
 import { PostList } from "../widgets/PostList/PostList";
+import { ThemeProvider } from "../shared/lib/theme/ThemeProvider";
+import { posts } from "../shared/mocks/posts";
+import { withLoading } from "../shared/lib/hoc/withLoading";
+
+const PostListWithLoading = withLoading(PostList)
 
 export const App: FC = () => {
-  const posts = [
-    { id: 1, title: "Первый пост", content: "Текст первого поста" },
-    { id: 2, title: "Второй пост", content: "Текст второго поста" },
-    { id: 3, title: "Третий пост", content: "Текст третьего поста" },
-    { id: 4, title: "Четвёртый пост", content: "Текст четвёртого поста" },
-    { id: 5, title: "Пятый пост", content: "Текст пятого поста" },
-    { id: 6, title: "Шестой пост", content: "Текст шестого поста" },
-  ];
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [])
 
   return (
-    <MainLayout>
-      <PostList posts={posts} />
-    </MainLayout>
+    <ThemeProvider defaultTheme="light">
+      <MainLayout>
+        <PostListWithLoading isLoading={!isLoaded} posts={posts} />
+      </MainLayout>
+    </ThemeProvider>
   );
 };
