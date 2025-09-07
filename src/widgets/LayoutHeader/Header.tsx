@@ -1,6 +1,6 @@
 import { type FC, useState } from "react";
 import styles from "./Header.module.css";
-import logo from "../../../public/logo.jpg";
+import logo from "../../../src/logo.jpg"
 import { Button } from "../../shared/ui/button/Button";
 import { useTheme } from "../../shared/lib/theme/ThemeProvider";
 import { Modal } from "../../shared/ui/modal/Modal";
@@ -31,7 +31,11 @@ export const Header: FC = () => {
         Приложение для просмотра постов и комментариев
       </h1>
       <Modal isOpen={isOpen} onClose={handleModalClose}>
-        {modalContent}
+        <Modal.Header>О проекте</Modal.Header>
+        <Modal.Body>{modalContent}</Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleModalClose}>Ок</Button>
+        </Modal.Footer>
       </Modal>
       <Button onClick={handleAboutClick}>О проекте</Button>
       <Button onClick={toggleTheme}>Смена темы</Button>

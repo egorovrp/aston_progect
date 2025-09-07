@@ -11,15 +11,20 @@ export type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
-  title?: string;
   className?: string;
 };
 
-export const Modal: React.FC<ModalProps> = ({
+type Components = {
+  (props: ModalProps): ReactNode;
+  Header: React.FC<{ children: ReactNode; className?: string }>;
+  Body: React.FC<{ children: ReactNode; className?: string }>;
+  Footer: React.FC<{ children: ReactNode; className?: string }>;
+};
+
+export const Modal: Components = ({
   isOpen,
   onClose,
   children,
-  title,
   className = "",
 }) => {
   useEffect(() => {
@@ -40,10 +45,34 @@ export const Modal: React.FC<ModalProps> = ({
         <button type="button" className={styles.modalClose} onClick={onClose}>
           ×
         </button>
-        {title && <h2>{title}</h2>}
-        <div className={styles.modalBody}>{children}</div>
+        {children}
       </div>
     </div>,
     portalRoot
   );
 };
+
+const Header: React.FC<{ children: ReactNode; className?: string }> = ({
+  children,
+  className = "",
+}) => {
+  return <div className={`${styles.modalHeader} ${className}`}>{children}</div>;
+};
+
+const Body: React.FC<{ children: ReactNode; className?: string }> = ({
+  children,
+  className = "",
+}) => {
+  return <div className={`${styles.modalBody} ${className}`}>{children}</div>;
+};
+
+const Footer: React.FC<{ children: ReactNode; className?: string }> = ({
+  children,
+  className = "",
+}) => {
+  return <div className={`${styles.modalFooter} ${className}`}>{children}</div>;
+};
+
+Modal.Header = Header;
+Modal.Body = Body;
+Modal.Footer = Footer;

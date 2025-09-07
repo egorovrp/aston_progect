@@ -24,3 +24,24 @@
 1. Реализовано переключение темы в проекте через контекст.
 
 2. Добавлено модальное окно с информацией о проекте, которое открывается по кнопке "О проекте".
+
+Домашнее задание №3
+
+Реализовано отображение модального окна с использованием compound components, добавлена фильтрация постов по длине заголовка, свертывание комментариев и оптимизация через HOC и хуки.
+
+1. Compound Components:
+   - Modal с подкомпонентами (Header, Body, Footer) → src/shared/ui/Modal/
+
+2. HOC withLoading:
+   - HOC → src/shared/lib/hoc/
+   - Применяется к PostList
+
+3. Свертывание/разворачивание комментариев:
+  - CommentList.tsx → src/widgets/CommentList/ui/
+  - Использованы useState, useCallback
+
+4. Добавлена фильтрация по длине заголовка:
+  - PostLengthFilter → src/features/PostLengthFilter/ui/
+  - filterByLength.ts → src/features/PostLengthFilter/lib/
+
+5. Использованы useMemo, useCallback в PostList

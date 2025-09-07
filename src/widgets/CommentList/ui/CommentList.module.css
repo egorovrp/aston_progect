@@ -1,0 +1,7 @@
+.commentBtn {
+    height: 20px;
+    width: 170px;
+    background-color: rgb(202 187 154);
+    border-radius: 25px;
+    border: solid 2px rgb(111 88 50);
+}
