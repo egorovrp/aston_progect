@@ -1,0 +1,12 @@
+.error {
+  padding: 12px;
+  border: 1px solid #f5c2c2;
+  background: #fff0f0;
+  color: #721c24;
+  display: inline-block;
+}
+.btn {
+  margin-top: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}

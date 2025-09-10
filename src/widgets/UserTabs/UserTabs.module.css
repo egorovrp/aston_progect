@@ -1,0 +1,19 @@
+.tabs {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.link {
+    color: #0366d6;
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.active {
+    background: #0366d6;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 4px;
+}

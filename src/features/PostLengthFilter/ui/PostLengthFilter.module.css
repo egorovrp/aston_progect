@@ -1,0 +1,13 @@
+.postLengthFilter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+input {
+    width: 200px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: #ece395;
+    text-align: center;
+}

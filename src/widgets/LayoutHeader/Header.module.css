@@ -4,6 +4,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 50px 0 0 0;
+    gap: 10px;
 }
 
 .heading {
@@ -16,4 +17,8 @@
 .logotype {
     width: 210px;
     height: 90px;
+}
+
+.dark {
+    color: rgb(255, 255, 255);
 }

@@ -1,0 +1,31 @@
+.container {
+  padding: 16px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.title {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.meta {
+  font-size: 12px;
+  color: #666;
+}
+
+h1 {
+  color: #ece395;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+}
