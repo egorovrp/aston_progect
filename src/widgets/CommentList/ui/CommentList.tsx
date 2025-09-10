@@ -1,5 +1,6 @@
 import { useState, useCallback, type FC, memo } from "react";
 import styles from "./CommentList.module.css";
+
 type Comment = { id: string; text: string; author?: string };
 type Props = { comments: Comment[]; initialCollapsed?: boolean };
 

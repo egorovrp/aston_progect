@@ -1,0 +1,36 @@
+.container {
+    padding: 16px;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.card {
+    border: 1px solid #eee;
+    padding: 8px;
+    border-radius: 6px;
+    background: white;
+    text-align: center;
+}
+
+.thumb {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 13px;
+    color: #333;
+}
